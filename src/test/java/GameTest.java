@@ -68,4 +68,19 @@ class GameTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void NoPlayers() {
+        Game game = new Game();
+        Player player1 = new Player(0, "", 0);
+        Player player2 = new Player(0, "", 0);
+        game.register(player1);
+        game.register(player2);
+
+        int actual = game.round("", "");
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+
 }
