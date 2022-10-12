@@ -1,8 +1,10 @@
-import javax.management.relation.RelationServiceNotRegisteredException;
 import java.util.ArrayList;
+
+
 
 public class Game {
     ArrayList<Player> players = new ArrayList<>();
+    private String name;
 
     public void register(Player player) {
         players.add(player);
@@ -20,10 +22,10 @@ public class Game {
             }
         }
         if (player1 == null) {
-            throw new NotRegisteredException(playerName1);
+            throw new NotRegisteredException("Игрок по имени " + name + "не найден");
         }
         if (player2 == null) {
-            throw new NotRegisteredException(playerName2);
+            throw new NotRegisteredException("Игрок по имени " + name + "не найден");
         }
 
         if (player1.getStrength() == player2.getStrength()) {

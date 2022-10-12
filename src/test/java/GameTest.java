@@ -20,6 +20,7 @@ class GameTest {
         Game game = new Game();
         Player player1 = new Player(1, "Силач", 10);
         Player player2 = new Player(2, "Картошка", 15);
+
         game.register(player1);
         game.register(player2);
 
@@ -67,20 +68,4 @@ class GameTest {
         int expected = 0;
         Assertions.assertEquals(expected, actual);
     }
-
-    @Test
-    public void NoPlayers() {
-        Game game = new Game();
-        Player player1 = new Player(0, "", 0);
-        Player player2 = new Player(0, "", 0);
-        game.register(player1);
-        game.register(player2);
-
-        int actual = game.round("", "");
-        int expected = 0;
-        Assertions.assertEquals(expected, actual);
-    }
-
-
-
 }
